@@ -1,4 +1,5 @@
 import numpy as np
+import sympy
 from sympy import prime
 from sympy.ntheory.modular import crt
 import random
@@ -32,12 +33,12 @@ def reduced_ascii_chunks(ascii_chunks):
     return cantor_reduced_list
 
 def main():
-    plain_text = input('Enter PlainText: ')
-    # plain_text = 'abcdefghijklmnopqrstuvwxyz'*1000
+    # plain_text = input('Enter PlainText: ')
+    plain_text = 'abcdefghijklmnopqrstuvwxyz'*1000
     t1 = time.time()
     n = len(plain_text)
 
-    block_size = 128
+    block_size = 256
         
     plain_text_chunks = []
     if n < block_size:
@@ -61,19 +62,11 @@ def main():
         cantor_reduced_list.append(reduced_ascii_chunks(chunk))
     # print(cantor_reduced_list)
 
-
-
-    temp = []
-    for chunk in cantor_reduced_list:
-        for i in chunk:
-            temp.append(i)
-    lower_index = max(temp)
-
     M = []
-    for i in range(block_size//2):
-        x = prime(random.randint(lower_index,lower_index+1000))
-        if x not in M:
-            M.append(x)
+    for i in range(1,block_size//2+1):
+        M.append(sympy.ntheory.generate.nextprime(33024,ith=i))
+
+    random.shuffle(M)
 
     print('Private key generated : ',end='')
     print(M)
