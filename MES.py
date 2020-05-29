@@ -1,4 +1,5 @@
 import numpy as np
+import sympy
 from sympy import prime
 from sympy.ntheory.modular import crt
 import random
@@ -54,17 +55,15 @@ def encrypt_decrypt(plain_text,block_size):
     for chunk in ascii_chunks:
         cantor_reduced_list.append(reduced_ascii_chunks(chunk))
 
-    temp = []
-    for chunk in cantor_reduced_list:
-        for i in chunk:
-            temp.append(i)
-    lower_index = max(temp)
-
     M = []
-    for i in range(block_size//2):
-        x = prime(random.randint(lower_index,lower_index+1000))
-        if x not in M:
-            M.append(x)
+    for i in range(1,block_size//2+1):
+        M.append(sympy.ntheory.generate.nextprime(33024,ith=i))
+
+    random.shuffle(M)
+
+    # print('Private key generated : ',end='')
+    # print(M)
+
 
     # print('Private key generated : ',end='')
     # print(M)
