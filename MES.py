@@ -33,8 +33,13 @@ def reduced_ascii_chunks(ascii_chunks):
     return cantor_reduced_list
 
 def encrypt_decrypt(plain_text,block_size):
-    t1 = time.time()
     n = len(plain_text)
+    M = []
+    for i in range(1,block_size//2+1):
+        M.append(sympy.ntheory.generate.nextprime(33024,ith=i))
+    random.shuffle(M)
+
+    t1 = time.time()
     
     plain_text_chunks = []
     if n < block_size:
@@ -54,19 +59,6 @@ def encrypt_decrypt(plain_text,block_size):
     cantor_reduced_list = []
     for chunk in ascii_chunks:
         cantor_reduced_list.append(reduced_ascii_chunks(chunk))
-
-    M = []
-    for i in range(1,block_size//2+1):
-        M.append(sympy.ntheory.generate.nextprime(33024,ith=i))
-
-    random.shuffle(M)
-
-    # print('Private key generated : ',end='')
-    # print(M)
-
-
-    # print('Private key generated : ',end='')
-    # print(M)
 
     # Applying the Chinese Remainder Theorem to get X
 
