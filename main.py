@@ -35,11 +35,20 @@ def reduced_ascii_chunks(ascii_chunks):
 def main():
     # plain_text = input('Enter PlainText: ')
     plain_text = 'abcdefghijklmnopqrstuvwxyz'*1000
-    t1 = time.time()
     n = len(plain_text)
-
     block_size = 256
-        
+    
+    M = []
+    for i in range(1,block_size//2+1):
+        M.append(sympy.ntheory.generate.nextprime(33024,ith=i))
+
+    random.shuffle(M)
+
+    print('Private key generated : ',end='')
+    print(M)
+
+    t1 = time.time()
+    
     plain_text_chunks = []
     if n < block_size:
         plain_text_chunks.append(padding(plain_text,block_size))
@@ -62,17 +71,7 @@ def main():
         cantor_reduced_list.append(reduced_ascii_chunks(chunk))
     # print(cantor_reduced_list)
 
-    M = []
-    for i in range(1,block_size//2+1):
-        M.append(sympy.ntheory.generate.nextprime(33024,ith=i))
-
-    random.shuffle(M)
-
-    print('Private key generated : ',end='')
-    print(M)
-
     # Applying the Chinese Remainder Theorem to get X
-
     cipher_text = []
     for chunk in cantor_reduced_list:
         x = crt(M,chunk)
