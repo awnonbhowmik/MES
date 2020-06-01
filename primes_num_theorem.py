@@ -11,7 +11,7 @@ def primesLessThan_N(n):
 
 print('------------ #Primes < n ------------')
 
-n = 100
+n = 1000
 
 num_primes = []
 for i in range(2,n+1):
@@ -33,7 +33,7 @@ def test_func(x, a, b):
 
 param, param_cov = optimize.curve_fit(test_func, x, y)
 print('Curve Parameter (a,b) = ',param)
-ans = (param[0]*x+param[1]) 
+ans = x/np.log(param[0]*x+param[1]) 
   
 
 plt.plot(x, y,'-', color ='blue', label ="Actual") 
