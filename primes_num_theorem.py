@@ -11,7 +11,7 @@ def primesLessThan_N(n):
 
 print('------------ #Primes < n ------------')
 
-n = 100
+n = 1000
 
 num_primes = []
 for i in range(2,n+1):
