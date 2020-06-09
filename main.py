@@ -36,7 +36,7 @@ def main():
     # plain_text = input('Enter PlainText: ')
     plain_text = 'abcdefghijklmnopqrstuvwxyz'*1000
     n = len(plain_text)
-    block_size = 256
+    block_size = 128
     
     M = []
     for i in range(1,block_size//2+1):
