@@ -33,8 +33,8 @@ def reduced_ascii_chunks(ascii_chunks):
     return cantor_reduced_list
 
 def main():
-    # plain_text = input('Enter PlainText: ')
-    plain_text = 'abcdefghijklmnopqrstuvwxyz'*1000
+    plain_text = input('Enter PlainText: ')
+    # plain_text = 'abcdefghijklmnopqrstuvwxyz'*1000
     n = len(plain_text)
     block_size = 128
     
