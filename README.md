@@ -36,6 +36,17 @@ $ git clone https://github.com/awnonbhowmik/MES.git
 $ pip3 install -r requirements.txt
 ```
 
+## Testing
+### WebApp
+ > A dynamic Web-app created with Streamlit where you can play around with the encryption parameters in real-time.
+```bash
+$ streamlit run app.py
+```
+### Terminal
+```bash
+$ python3 main.py
+```
+
 ## Output
 ![ezgif com-video-to-gif (1)](https://user-images.githubusercontent.com/36446402/84443463-49e67f00-ac5d-11ea-9386-b0c69cee1df6.gif)
 
