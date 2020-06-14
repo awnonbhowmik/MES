@@ -1,5 +1,6 @@
+numpy==1.18.5
 matplotlib==3.2.1
-sympy==1.6
-numpy==1.17.4
 scipy==1.4.1
+streamlit==0.61.0
+sympy==1.6
 pycryptodome==3.9.7
