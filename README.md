@@ -40,7 +40,7 @@ $ pip3 install -r requirements.txt
 ### WebApp
  > A dynamic Web-app created with Streamlit where you can play around with the encryption parameters in real-time.
 ```bash
-$ streamlit run app.py
+$ streamlit run bit_app.py
 ```
 ### Terminal
 ```bash
