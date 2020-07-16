@@ -8,7 +8,9 @@
 # MES
 Modern Encryption Standard
 
-An probable future alternative to AES.
+A probable future alternative to AES.
+
+This repository contains all codes related to our research paper titled "MES – Modern Encryption Standard". The paper is available here: https://www.ijcaonline.org/archives/volume176/number36/31435-31435-2020920479
 
 As mathematical theory has evolved and computing
 capabilities have improved, what initially seemed to be
@@ -65,3 +67,22 @@ This project is licensed under the GNU General Public License v3.0 - see the [LI
 
 ## Citation
 If you find this code useful in your research, please consider citing:
+```
+@article{10.5120/ijca2020920479,
+	author = {Awnon Bhowmik and Unnikrishnan Menon},
+	title = {MES – Modern Encryption Standard},
+	journal = {International Journal of Computer Applications},
+	issue_date = {July 2020},
+	volume = {176},
+	number = {36},
+	month = {Jul},
+	year = {2020},
+	issn = {0975-8887},
+	pages = {21-27},
+	numpages = {7},
+	url = {http://www.ijcaonline.org/archives/volume176/number36/31435-2020920479},
+	doi = {10.5120/ijca2020920479},
+	publisher = {Foundation of Computer Science (FCS), NY, USA},
+	address = {New York, USA}
+}
+```
